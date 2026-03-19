@@ -1,40 +1,78 @@
 # Emergency Medical Service (EMS) Logistics & Resource Management System
 
-**Submitted by:** [Your Name / Student ID]  
-**Course/Program:** [Course Name, if applicable]
+**Submitted by:** Harel Gabay  
+**Course/Program:** Data Base Project
+
+---
 
 ## Introduction
-This project is a comprehensive database system designed to manage the complex logistics, supply chain, and resources of an Emergency Medical Service organization (such as Magen David Adom). The system focuses entirely on operational readiness—tracking stations, personnel, fleet maintenance, inventory procurement, uniform distribution, and strict compliance logs for medical equipment calibration and controlled substances. It does not handle patient medical records, ensuring a strict focus on organizational logistics.
+This project is a comprehensive database system designed to manage the complex logistics, supply chain, and resources of an Emergency Medical Service organization (such as Magen David Adom). The system focuses entirely on operational readiness—tracking stations, personnel, fleet maintenance, inventory procurement, uniform distribution, and strict compliance logs for medical equipment calibration and controlled substances. 
 
 ---
 
 ## Phase 1: System Design & UI Mockups
 
 ### User Interface Mockups
-The following screens demonstrate the intended workflow and user experience for the logistics management dashboard. 
+The following screens demonstrate the intended workflow and user experience for the logistics management dashboard.
 
-*(Note: Ensure the image paths match the actual filenames in your folder)*
-
-**1. Main Dashboard** *Overview of active vehicles, pending orders, and recent logistical activities.* ![Main Dashboard](./Phase%201/Images/Screen4.png)
-
-**2. Inventory & Procurement** *Management of station inventory and purchase orders from suppliers.* ![Inventory & Procurement](./Phase%201/Images/Screen5.png)
-
-**3. Fleet Management** *Tracking of ambulance fleet details and their maintenance/garage logs.* ![Fleet Management](./Phase%201/Images/Screen1.png)
-
-**4. Compliance & Tracking** *Sensitive tracking for medical equipment calibration and the controlled substances log.* ![Compliance & Tracking](./Phase%201/Images/Screen2.png)
-
-**5. Personnel & Gear** *Directory of medical staff and logs for issued uniforms and personal gear.* ![Personnel & Gear](./Phase%201/Images/Screen3.png)
-
----
+1. **Main Dashboard**: Overview of active vehicles and logistical activities. ![Main Dashboard](./Phase%201/Images/Screen4.png)
+2. **Inventory & Procurement**: Management of station inventory and purchase orders. ![Inventory & Procurement](./Phase%201/Images/Screen5.png)
+3. **Fleet Management**: Tracking of ambulance fleet details and garage logs. ![Fleet Management](./Phase%201/Images/Screen1.png)
+4. **Compliance & Tracking**: Sensitive tracking for equipment calibration and substances. ![Compliance & Tracking](./Phase%201/Images/Screen2.png)
+5. **Personnel & Gear**: Directory of medical staff and gear logs. ![Personnel & Gear](./Phase%201/Images/Screen3.png)
 
 ### Entity Relationship Diagram (ERD)
-The conceptual data model mapping out the 10 core entities, their attributes, and the relationships between them (including 1:N and M:N relationships).
-
+The conceptual data model mapping out 12 core entities and their relationships.
 ![ERD Screenshot](./Phase%201/Images/erd.png)
+
+### Data Structure Diagram (DSD)
+The logical database schema normalized to **3NF**, including PK/FK mappings.
+![DSD Screenshot](./Phase%201/Images/dsd.png)
 
 ---
 
-### Data Structure Diagram (DSD)
-The logical database schema derived from the ERD, normalized to 3NF. This includes the resolution of many-to-many relationships into intersection tables and the mapping of all Primary Keys (PK) and Foreign Keys (FK).
+## Implementation (DDL)
+The DSD was translated into a physical schema using **PostgreSQL 16**. The implementation enforces strict data integrity through:
+* **Primary & Foreign Keys**: Ensuring consistent relations across all tables.
+* **Check Constraints**: Validating business logic (e.g., valid cities, vehicle types).
+* **Not Null Constraints**: Ensuring critical data is always captured.
 
-![DSD Screenshot](./Phase%201/Images/dsd.png)
+---
+
+## Phase 2: Data Population
+
+To simulate a real-world operational environment, the database was populated in three distinct stages:
+
+### 1. Phase A: Manual Baseline
+Small-scale, high-quality manual insertions were performed to verify schema constraints and relationship integrity.
+* **File:** `[PATH_TO_MANUAL_SQL]`
+
+### 2. Phase B: Institutional Scaling (500+ Records)
+To reach a realistic scale for a national EMS organization, a Python-based generator was developed using the **Faker** library. This phase populated 9 core tables with over **500 records each**.
+* **Methodology**: Uses an idempotent approach with `ON CONFLICT DO NOTHING` to allow repeatable generation without collisions.
+* **Script:** `[PATH_TO_PHASE_B_GENERATOR]`
+
+### 3. Phase C: Big Data & Bulk Injection (40,000+ Records)
+Simulating years of operational history, we injected **20,000 records each** into `Maintenance_Log` and `Controlled_Substances_Log`.
+* **Smart Generation**: The script queries the live DB to fetch valid `Worker_IDs` and `License_Plates` before creating synchronized CSV files, ensuring 100% referential integrity.
+* **Bulk Loading**: Utilizes the PostgreSQL **COPY** command for high-speed injection, bypassing standard INSERT overhead.
+* **Scripts:** `[PATH_TO_CSV_GEN]` & `[PATH_TO_BULK_INJECTOR]`
+
+---
+
+## Tech Stack
+* **Database**: PostgreSQL 16 (Containerized via Docker)
+* **Programming**: Python 3.10
+* **Key Libraries**: `psycopg2` (DB Driver), `Faker` (Synthetic Data), `csv`
+
+---
+
+## Data Verification
+The following query verifies the successful population and scale of the system:
+
+```sql
+SELECT 
+    (SELECT COUNT(*) FROM personnel) as total_staff,
+    (SELECT COUNT(*) FROM vehicle) as total_fleet,
+    (SELECT COUNT(*) FROM maintenance_log) as total_maintenance_records,
+    (SELECT COUNT(*) FROM controlled_substances_log) as total_substance_logs;
