@@ -1,0 +1,1363 @@
+{
+  "diagramType": 2,
+  "data": {
+    "nodes": [
+      {
+        "id": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+        "type": "Table",
+        "position": {
+          "x": 1088.51,
+          "y": 119.28
+        },
+        "data": {
+          "label": "Station",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "b6efc568-a9f5-4021-820b-431eb81156d1",
+              "name": "Station_ID",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "ba47a817-b2d0-4d83-812d-4c8a843c0137",
+              "name": "Station_Name",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "57745084-a829-463a-a88e-4e043b1dfaaf",
+              "name": "City",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "col-station-address",
+              "name": "Address",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 125
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+        "type": "Table",
+        "position": {
+          "x": 1559.71,
+          "y": 116.14
+        },
+        "data": {
+          "label": "Personnel",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "5328b56c-1438-42bb-a797-97e0be9378e6",
+              "name": "Worker_ID",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "88fd59b8-c282-4fae-95fa-a4baa9683179",
+              "name": "Full_Name",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "da0d51bd-ae5b-466b-a30c-e9989e996add",
+              "name": "Specialization",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "b113d94a-e89d-4931-b526-ada02e05c6de",
+              "name": "Role",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "col-personnel-phone",
+              "name": "Phone_Number",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "col-personnel-email",
+              "name": "Email",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "9b805937-edf7-4a18-9d17-6f84eb13afbf",
+              "name": "Station_ID",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "21f5e689-e160-4686-a54a-e9c96ac27909",
+                "sourceTableId": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+                "columns": [
+                  {
+                    "id": "fk_b6efc568-a9f5-4021-820b-431eb81156d1",
+                    "name": "Station_ID",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 200
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "814de6e7-9e4c-4342-98ef-81bfb442da95",
+        "type": "Table",
+        "position": {
+          "x": 764.02,
+          "y": 574.45
+        },
+        "data": {
+          "label": "Vehicle",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "e49e9ad0-0236-4df6-a8b6-4d6f99432a5b",
+              "name": "License_Plate",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "03dd4aef-5306-4c74-91b3-088c60c12e97",
+              "name": "Purchase_Date",
+              "type": "DATE",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "5e10e8bb-1209-41c4-b541-045fa030e07a",
+              "name": "Vehicle_Type",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "col-vehicle-manuf",
+              "name": "Manufacturer",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "col-vehicle-year",
+              "name": "Manufacture_Year",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "c1fdeaad-cf81-4271-a082-5a11903a8386",
+              "name": "Station_ID",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "84241997-6256-41da-8cc5-6ba6d183d652",
+                "sourceTableId": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+                "columns": [
+                  {
+                    "id": "fk_b6efc568-a9f5-4021-820b-431eb81156d1",
+                    "name": "Station_ID",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 175
+        },
+        "selected": true,
+        "dragging": false
+      },
+      {
+        "id": "302a8600-02d8-4c71-99e6-bef3e07d4142",
+        "type": "Table",
+        "position": {
+          "x": 341.77,
+          "y": 487.08
+        },
+        "data": {
+          "label": "Maintenance_Log",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "0061300b-29d7-4b52-81de-2046c84d38ce",
+              "name": "Log_ID",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "503c6552-195c-41c7-b25a-d6c135c5685f",
+              "name": "Treatment_Date",
+              "type": "DATE",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "61f2f2b6-623e-486a-b88c-c236e788f099",
+              "name": "Cost",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "col-maint-garage",
+              "name": "Garage_Name",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "col-maint-desc",
+              "name": "Repair_Description",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "437f79e3-e00f-47cb-b95f-238db5901469",
+              "name": "Worker_ID",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "db3eae4f-4463-4c95-919d-c636162391bf",
+                "sourceTableId": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+                "columns": [
+                  {
+                    "id": "fk_5328b56c-1438-42bb-a797-97e0be9378e6",
+                    "name": "Worker_ID",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "023ad5c4-8d73-4de2-9afe-9e5cbfab5088",
+              "name": "License_Plate",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "b3213c9d-c66a-4041-b704-babccbed9abf",
+                "sourceTableId": "814de6e7-9e4c-4342-98ef-81bfb442da95",
+                "columns": [
+                  {
+                    "id": "fk_e49e9ad0-0236-4df6-a8b6-4d6f99432a5b",
+                    "name": "License_Plate",
+                    "type": "VARCHAR(n)"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 200
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "a20bab5b-de08-4f74-84ee-3e7116082166",
+        "type": "Table",
+        "position": {
+          "x": 1319.87,
+          "y": -244.06
+        },
+        "data": {
+          "label": "Supplier",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "0e4920f4-e117-42d1-b7d8-ee4cf8b8179b",
+              "name": "Supplier_ID",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "0ac192a7-7c09-4116-950f-1a845e07196e",
+              "name": "Company_Name",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "col-supp-contact",
+              "name": "Contact_Person",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "col-supp-phone",
+              "name": "Phone_Number",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "col-supp-email",
+              "name": "Email",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 150
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "c6b66235-25a5-4bb7-9192-68e99e45d07c",
+        "type": "Table",
+        "position": {
+          "x": 908.08,
+          "y": -166.6
+        },
+        "data": {
+          "label": "Purchase_Order",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "07ae0cf3-11aa-40c3-b0b4-b9f3194901f4",
+              "name": "Order_ID",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "3baf9eb1-fc63-4908-bfec-63322d0026e5",
+              "name": "Order_Date",
+              "type": "DATE",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "3721b1b5-5a1f-4b49-87f2-01f9c936bdb7",
+              "name": "Delivery_Date",
+              "type": "DATE",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "75011650-64bb-4aee-b5a7-e1395da26b06",
+              "name": "Worker_ID",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "75a44511-821c-423b-81e3-ed2ee5f8580b",
+                "sourceTableId": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+                "columns": [
+                  {
+                    "id": "fk_5328b56c-1438-42bb-a797-97e0be9378e6",
+                    "name": "Worker_ID",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "480bc3c7-17de-46ed-8876-ae71e1759076",
+              "name": "Station_ID",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "6b9c916d-e780-45ef-8fd8-509389888611",
+                "sourceTableId": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+                "columns": [
+                  {
+                    "id": "fk_b6efc568-a9f5-4021-820b-431eb81156d1",
+                    "name": "Station_ID",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "8d400730-8e9d-4a70-bf56-a7d2dc60a90f",
+              "name": "Supplier_ID",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "96e4074c-c417-4829-95e5-f40a7fa933f3",
+                "sourceTableId": "a20bab5b-de08-4f74-84ee-3e7116082166",
+                "columns": [
+                  {
+                    "id": "fk_0e4920f4-e117-42d1-b7d8-ee4cf8b8179b",
+                    "name": "Supplier_ID",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 175
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "45988073-ca7c-41d0-a32b-2d31719ac37b",
+        "type": "Table",
+        "position": {
+          "x": 642.27,
+          "y": 102.6
+        },
+        "data": {
+          "label": "Equipment_Catalog",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "06495cdb-31ba-499e-89d5-50aed15030e8",
+              "name": "Item_Code",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "eef6993d-773a-4507-aea4-bf1b216d4b73",
+              "name": "Item_Name",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "66b49563-5cf8-4594-99cd-58b1b1c4fdea",
+              "name": "Category",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 100
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "f678a9ad-2e02-4f95-99d3-69275520c48a",
+        "type": "Table",
+        "position": {
+          "x": 642.64,
+          "y": 342.35
+        },
+        "data": {
+          "label": "Station_Inventory",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "9307349d-c6eb-4c53-842b-0df7ab7efe75",
+              "name": "Station_ID",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "a4dc68e7-ffcd-4adb-ae94-86705a34320a",
+                "sourceTableId": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+                "columns": [
+                  {
+                    "id": "fk_b6efc568-a9f5-4021-820b-431eb81156d1",
+                    "name": "Station_ID",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "46f16c84-8ca4-43bf-9875-0afafd839e92",
+              "name": "Item_Code",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "fcd23b1e-e1a2-4b62-86be-11d35cdda116",
+                "sourceTableId": "45988073-ca7c-41d0-a32b-2d31719ac37b",
+                "columns": [
+                  {
+                    "id": "fk_06495cdb-31ba-499e-89d5-50aed15030e8",
+                    "name": "Item_Code",
+                    "type": "VARCHAR(n)"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "38cf4987-8741-4d47-a748-11fb7da086e8",
+              "name": "Quantity",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 101
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "c4aaa762-a32e-4376-9ee4-e81d0f760787",
+        "type": "Table",
+        "position": {
+          "x": 338.95,
+          "y": 40.74
+        },
+        "data": {
+          "label": "Order_Items",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "e1d8d912-5c50-4e1f-a223-522fa4ea6b4f",
+              "name": "Order_ID",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "abb1ebaf-594c-4950-b0ce-5f49757b655f",
+                "sourceTableId": "c6b66235-25a5-4bb7-9192-68e99e45d07c",
+                "columns": [
+                  {
+                    "id": "fk_07ae0cf3-11aa-40c3-b0b4-b9f3194901f4",
+                    "name": "Order_ID",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "5b6e50e8-cadb-4b6a-87f8-66033b4c30aa",
+              "name": "Item_Code",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "bcb9d0ec-7aca-4715-959c-35cd13e414d6",
+                "sourceTableId": "45988073-ca7c-41d0-a32b-2d31719ac37b",
+                "columns": [
+                  {
+                    "id": "fk_06495cdb-31ba-499e-89d5-50aed15030e8",
+                    "name": "Item_Code",
+                    "type": "VARCHAR(n)"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "c902f0d4-7846-4a3a-a98a-6d6e59e8fab9",
+              "name": "Amount",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 101
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "250ae2d6-3f48-450b-aa04-da74b868ab91",
+        "type": "Table",
+        "position": {
+          "x": 1914.5,
+          "y": 107.25
+        },
+        "data": {
+          "label": "Uniform_Issues",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "dac959ff-8596-479c-b4f9-eb14bea407f6",
+              "name": "Issue_ID",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "4c11f403-f61b-471c-a443-2b35e68baaa4",
+              "name": "Issue_Date",
+              "type": "DATE",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "48bd3546-7e1f-4202-b16f-043994b4fc32",
+              "name": "Gear_Type",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "3ce53334-62c8-4071-a7b4-ea63a1bfd7b7",
+              "name": "Size",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "8c1e7e04-cdab-43ef-8356-da511b531f67",
+              "name": "Receiver_ID",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "4acb7f99-02f0-44b5-8266-62a4567355fc",
+                "sourceTableId": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+                "columns": [
+                  {
+                    "id": "fk_5328b56c-1438-42bb-a797-97e0be9378e6",
+                    "name": "Worker_ID_Issuer",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "2bcaa854-6427-4aac-94ff-7e49b82e9cc1",
+              "name": "Issuer_ID",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "54294dce-c019-4de7-8b13-8bee679a0141",
+                "sourceTableId": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+                "columns": [
+                  {
+                    "id": "fk_5328b56c-1438-42bb-a797-97e0be9378e6",
+                    "name": "Worker_ID",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 175
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "4fcb8863-9240-46b1-b4b1-360b35c5eb9d",
+        "type": "Table",
+        "position": {
+          "x": 338,
+          "y": 202.54
+        },
+        "data": {
+          "label": "Calibration_Logs",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "a36d61b8-288d-41b0-80b8-b52a2d3f2c7b",
+              "name": "Calibration_ID",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "20320f08-5f82-4f7a-a1d8-d2836a4f32eb",
+              "name": "Check_Date",
+              "type": "DATE",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "f2efccca-af9b-4805-b3b6-df10fe84c0c3",
+              "name": "Result_Status",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "04374b87-b24e-4fe3-a148-6b329f16eb67",
+              "name": "Item_Code",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "47eeac4a-52c9-4f7a-8557-acd29c009dfe",
+                "sourceTableId": "45988073-ca7c-41d0-a32b-2d31719ac37b",
+                "columns": [
+                  {
+                    "id": "fk_06495cdb-31ba-499e-89d5-50aed15030e8",
+                    "name": "Item_Code",
+                    "type": "VARCHAR(n)"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "23e5ecf4-767a-4db8-8a52-f6fcda688ca2",
+              "name": "Station_ID",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "1385a3cd-b686-4088-b807-0fb46d601f83",
+                "sourceTableId": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+                "columns": [
+                  {
+                    "id": "fk_b6efc568-a9f5-4021-820b-431eb81156d1",
+                    "name": "Station_ID",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 150
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "9f667e92-cc08-4829-a40e-39b4db6d7a99",
+        "type": "Table",
+        "position": {
+          "x": 1548,
+          "y": 472
+        },
+        "data": {
+          "label": "Controlled_Substances_Log",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "4ae09fd1-d6bb-4984-a8ae-1b1dd7370805",
+              "name": "Log_ID",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "f71bdba5-2c35-4036-aa72-a3fb3af4b124",
+              "name": "Withdrawal_Date",
+              "type": "DATE",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "7a46144e-6675-49f6-961f-33c215af1ff6",
+              "name": "Amount_Drawn",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "9d1ed5f4-1d41-4e73-b830-a58a0523a685",
+              "name": "Worker_ID",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "589bd12a-31ee-4c36-93bc-847eda6dd644",
+                "sourceTableId": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+                "columns": [
+                  {
+                    "id": "fk_5328b56c-1438-42bb-a797-97e0be9378e6",
+                    "name": "Worker_ID",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "3fbb4277-925b-451b-a3d9-226bae9ef4d8",
+              "name": "Item_Code",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "1d9296e3-9e15-4b46-b87a-43f567e8ca54",
+                "sourceTableId": "45988073-ca7c-41d0-a32b-2d31719ac37b",
+                "columns": [
+                  {
+                    "id": "fk_06495cdb-31ba-499e-89d5-50aed15030e8",
+                    "name": "Item_Code",
+                    "type": "VARCHAR(n)"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 174
+        },
+        "selected": false,
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "id": "559ba194-169c-48df-9d90-8fe5bc99651c",
+        "type": "Relational",
+        "source": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+        "targetHandle": "foreign-key-handle-21f5e689-e160-4686-a54a-e9c96ac27909",
+        "target": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "21f5e689-e160-4686-a54a-e9c96ac27909",
+            "sourceTableId": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+            "columns": [
+              {
+                "id": "fk_b6efc568-a9f5-4021-820b-431eb81156d1",
+                "name": "Station_ID",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "d58cf7d8-fff1-4981-ac44-caed8829adae",
+        "type": "Relational",
+        "source": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+        "targetHandle": "foreign-key-handle-84241997-6256-41da-8cc5-6ba6d183d652",
+        "target": "814de6e7-9e4c-4342-98ef-81bfb442da95",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "84241997-6256-41da-8cc5-6ba6d183d652",
+            "sourceTableId": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+            "columns": [
+              {
+                "id": "fk_b6efc568-a9f5-4021-820b-431eb81156d1",
+                "name": "Station_ID",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "26e82259-63e3-405b-8649-0c20bbf4a74c",
+        "type": "Relational",
+        "source": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+        "targetHandle": "foreign-key-handle-db3eae4f-4463-4c95-919d-c636162391bf",
+        "target": "302a8600-02d8-4c71-99e6-bef3e07d4142",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "db3eae4f-4463-4c95-919d-c636162391bf",
+            "sourceTableId": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+            "columns": [
+              {
+                "id": "fk_5328b56c-1438-42bb-a797-97e0be9378e6",
+                "name": "Worker_ID",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "295d2c41-31f2-40bc-9457-bf3e68be3858",
+        "type": "Relational",
+        "source": "814de6e7-9e4c-4342-98ef-81bfb442da95",
+        "targetHandle": "foreign-key-handle-b3213c9d-c66a-4041-b704-babccbed9abf",
+        "target": "302a8600-02d8-4c71-99e6-bef3e07d4142",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "b3213c9d-c66a-4041-b704-babccbed9abf",
+            "sourceTableId": "814de6e7-9e4c-4342-98ef-81bfb442da95",
+            "columns": [
+              {
+                "id": "fk_e49e9ad0-0236-4df6-a8b6-4d6f99432a5b",
+                "name": "License_Plate",
+                "type": "VARCHAR(n)"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "97ca1897-e003-424a-b003-73839ee286c4",
+        "type": "Relational",
+        "source": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+        "targetHandle": "foreign-key-handle-75a44511-821c-423b-81e3-ed2ee5f8580b",
+        "target": "c6b66235-25a5-4bb7-9192-68e99e45d07c",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "75a44511-821c-423b-81e3-ed2ee5f8580b",
+            "sourceTableId": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+            "columns": [
+              {
+                "id": "fk_5328b56c-1438-42bb-a797-97e0be9378e6",
+                "name": "Worker_ID",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "1eaf9d9a-8aa7-416a-9460-4a6c9eee8438",
+        "type": "Relational",
+        "source": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+        "targetHandle": "foreign-key-handle-6b9c916d-e780-45ef-8fd8-509389888611",
+        "target": "c6b66235-25a5-4bb7-9192-68e99e45d07c",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "6b9c916d-e780-45ef-8fd8-509389888611",
+            "sourceTableId": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+            "columns": [
+              {
+                "id": "fk_b6efc568-a9f5-4021-820b-431eb81156d1",
+                "name": "Station_ID",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "bb415224-991b-4b78-8a6e-5a6fc5ee3718",
+        "type": "Relational",
+        "source": "a20bab5b-de08-4f74-84ee-3e7116082166",
+        "targetHandle": "foreign-key-handle-96e4074c-c417-4829-95e5-f40a7fa933f3",
+        "target": "c6b66235-25a5-4bb7-9192-68e99e45d07c",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "96e4074c-c417-4829-95e5-f40a7fa933f3",
+            "sourceTableId": "a20bab5b-de08-4f74-84ee-3e7116082166",
+            "columns": [
+              {
+                "id": "fk_0e4920f4-e117-42d1-b7d8-ee4cf8b8179b",
+                "name": "Supplier_ID",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "42e873c7-97b9-4fde-ba0a-76bcf08ba6f3",
+        "type": "Relational",
+        "source": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+        "targetHandle": "foreign-key-handle-a4dc68e7-ffcd-4adb-ae94-86705a34320a",
+        "target": "f678a9ad-2e02-4f95-99d3-69275520c48a",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "a4dc68e7-ffcd-4adb-ae94-86705a34320a",
+            "sourceTableId": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+            "columns": [
+              {
+                "id": "fk_b6efc568-a9f5-4021-820b-431eb81156d1",
+                "name": "Station_ID",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "d5df7107-fc10-4201-a9a8-2fd11fcfed7b",
+        "type": "Relational",
+        "source": "45988073-ca7c-41d0-a32b-2d31719ac37b",
+        "targetHandle": "foreign-key-handle-fcd23b1e-e1a2-4b62-86be-11d35cdda116",
+        "target": "f678a9ad-2e02-4f95-99d3-69275520c48a",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "fcd23b1e-e1a2-4b62-86be-11d35cdda116",
+            "sourceTableId": "45988073-ca7c-41d0-a32b-2d31719ac37b",
+            "columns": [
+              {
+                "id": "fk_06495cdb-31ba-499e-89d5-50aed15030e8",
+                "name": "Item_Code",
+                "type": "VARCHAR(n)"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "93a679bd-275d-4713-ad91-50a6fb5c617b",
+        "type": "Relational",
+        "source": "c6b66235-25a5-4bb7-9192-68e99e45d07c",
+        "targetHandle": "foreign-key-handle-abb1ebaf-594c-4950-b0ce-5f49757b655f",
+        "target": "c4aaa762-a32e-4376-9ee4-e81d0f760787",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "abb1ebaf-594c-4950-b0ce-5f49757b655f",
+            "sourceTableId": "c6b66235-25a5-4bb7-9192-68e99e45d07c",
+            "columns": [
+              {
+                "id": "fk_07ae0cf3-11aa-40c3-b0b4-b9f3194901f4",
+                "name": "Order_ID",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "e6e4837e-e907-4911-bb21-7bb46dd8e2ce",
+        "type": "Relational",
+        "source": "45988073-ca7c-41d0-a32b-2d31719ac37b",
+        "targetHandle": "foreign-key-handle-bcb9d0ec-7aca-4715-959c-35cd13e414d6",
+        "target": "c4aaa762-a32e-4376-9ee4-e81d0f760787",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "bcb9d0ec-7aca-4715-959c-35cd13e414d6",
+            "sourceTableId": "45988073-ca7c-41d0-a32b-2d31719ac37b",
+            "columns": [
+              {
+                "id": "fk_06495cdb-31ba-499e-89d5-50aed15030e8",
+                "name": "Item_Code",
+                "type": "VARCHAR(n)"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "8ac3d40f-424f-4e1c-8162-0f40f10cb00d",
+        "type": "Relational",
+        "source": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+        "targetHandle": "foreign-key-handle-4acb7f99-02f0-44b5-8266-62a4567355fc",
+        "target": "250ae2d6-3f48-450b-aa04-da74b868ab91",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "4acb7f99-02f0-44b5-8266-62a4567355fc",
+            "sourceTableId": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+            "columns": [
+              {
+                "id": "fk_5328b56c-1438-42bb-a797-97e0be9378e6",
+                "name": "Worker_ID",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "594f6b2c-714f-4961-a7db-1352ac49a586",
+        "type": "Relational",
+        "source": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+        "targetHandle": "foreign-key-handle-54294dce-c019-4de7-8b13-8bee679a0141",
+        "target": "250ae2d6-3f48-450b-aa04-da74b868ab91",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "54294dce-c019-4de7-8b13-8bee679a0141",
+            "sourceTableId": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+            "columns": [
+              {
+                "id": "fk_5328b56c-1438-42bb-a797-97e0be9378e6",
+                "name": "Worker_ID",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "4b1ccd8d-5db6-477d-bc2e-6d418998db2b",
+        "type": "Relational",
+        "source": "45988073-ca7c-41d0-a32b-2d31719ac37b",
+        "targetHandle": "foreign-key-handle-47eeac4a-52c9-4f7a-8557-acd29c009dfe",
+        "target": "4fcb8863-9240-46b1-b4b1-360b35c5eb9d",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "47eeac4a-52c9-4f7a-8557-acd29c009dfe",
+            "sourceTableId": "45988073-ca7c-41d0-a32b-2d31719ac37b",
+            "columns": [
+              {
+                "id": "fk_06495cdb-31ba-499e-89d5-50aed15030e8",
+                "name": "Item_Code",
+                "type": "VARCHAR(n)"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "0714cff6-c0f1-4257-9963-656a0c1aec8a",
+        "type": "Relational",
+        "source": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+        "targetHandle": "foreign-key-handle-1385a3cd-b686-4088-b807-0fb46d601f83",
+        "target": "4fcb8863-9240-46b1-b4b1-360b35c5eb9d",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "1385a3cd-b686-4088-b807-0fb46d601f83",
+            "sourceTableId": "0cc97e3f-8bac-424a-a184-e38cf94fd9e7",
+            "columns": [
+              {
+                "id": "fk_b6efc568-a9f5-4021-820b-431eb81156d1",
+                "name": "Station_ID",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "e8ec850c-3837-46f8-9654-470df369d502",
+        "type": "Relational",
+        "source": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+        "targetHandle": "foreign-key-handle-589bd12a-31ee-4c36-93bc-847eda6dd644",
+        "target": "9f667e92-cc08-4829-a40e-39b4db6d7a99",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "589bd12a-31ee-4c36-93bc-847eda6dd644",
+            "sourceTableId": "f8b90f77-9ddd-4eac-b4ef-2a295ddd7448",
+            "columns": [
+              {
+                "id": "fk_5328b56c-1438-42bb-a797-97e0be9378e6",
+                "name": "Worker_ID",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "b9d089f8-61ef-409d-b321-1acce98665cc",
+        "type": "Relational",
+        "source": "45988073-ca7c-41d0-a32b-2d31719ac37b",
+        "targetHandle": "foreign-key-handle-1d9296e3-9e15-4b46-b87a-43f567e8ca54",
+        "target": "9f667e92-cc08-4829-a40e-39b4db6d7a99",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "1d9296e3-9e15-4b46-b87a-43f567e8ca54",
+            "sourceTableId": "45988073-ca7c-41d0-a32b-2d31719ac37b",
+            "columns": [
+              {
+                "id": "fk_06495cdb-31ba-499e-89d5-50aed15030e8",
+                "name": "Item_Code",
+                "type": "VARCHAR(n)"
+              }
+            ]
+          }
+        },
+        "selected": false
+      }
+    ],
+    "viewport": {
+      "x": 90.875,
+      "y": 135.65250000000003,
+      "zoom": 0.5
+    }
+  },
+  "name": "DBP_DSD",
+  "folder": {
+    "name": "Diagrams",
+    "folderType": 1,
+    "depth": 0,
+    "id": 262667
+  },
+  "id": 358052,
+  "updatedAtTimestamp": 1773929451
+}
