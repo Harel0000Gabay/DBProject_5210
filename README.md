@@ -15,19 +15,19 @@ This project is a comprehensive database system designed to manage the complex l
 ### User Interface Mockups
 The following screens demonstrate the intended workflow and user experience for the logistics management dashboard.
 
-1. **Main Dashboard**: Overview of active vehicles and logistical activities. ![Main Dashboard](./Phase%201/Images/Screen4.png)
-2. **Inventory & Procurement**: Management of station inventory and purchase orders. ![Inventory & Procurement](./Phase%201/Images/Screen5.png)
-3. **Fleet Management**: Tracking of ambulance fleet details and garage logs. ![Fleet Management](./Phase%201/Images/Screen1.png)
-4. **Compliance & Tracking**: Sensitive tracking for equipment calibration and substances. ![Compliance & Tracking](./Phase%201/Images/Screen2.png)
-5. **Personnel & Gear**: Directory of medical staff and gear logs. ![Personnel & Gear](./Phase%201/Images/Screen3.png)
+1. **Main Dashboard**: Overview of active vehicles and logistical activities. ![Main Dashboard](./Phase_1/Images/Screen4.png)
+2. **Inventory & Procurement**: Management of station inventory and purchase orders. ![Inventory & Procurement](./Phase_1/Images/Screen5.png)
+3. **Fleet Management**: Tracking of ambulance fleet details and garage logs. ![Fleet Management](./Phase_1/Images/Screen1.png)
+4. **Compliance & Tracking**: Sensitive tracking for equipment calibration and substances. ![Compliance & Tracking](./Phase_1/Images/Screen2.png)
+5. **Personnel & Gear**: Directory of medical staff and gear logs. ![Personnel & Gear](./Phase_1/Images/Screen3.png)
 
 ### Entity Relationship Diagram (ERD)
 The conceptual data model mapping out 12 core entities and their relationships.
-![ERD Screenshot](./Phase%201/Images/erd.png)
+![ERD Screenshot](./Phase_1/Images/erd.png)
 
 ### Data Structure Diagram (DSD)
 The logical database schema normalized to **3NF**, including PK/FK mappings.
-![DSD Screenshot](./Phase%201/Images/dsd.png)
+![DSD Screenshot](./Phase_1/Images/dsd.png)
 
 ---
 
@@ -45,18 +45,18 @@ To simulate a real-world operational environment, the database was populated in 
 
 ### 1. Phase A: Manual Baseline
 Small-scale, high-quality manual insertions were performed to verify schema constraints and relationship integrity.
-* **File:** `[PATH_TO_MANUAL_SQL]`
+* **File:** `[./Phase_1/sql_commands/insertTables.sql]`
 
 ### 2. Phase B: Institutional Scaling (500+ Records)
 To reach a realistic scale for a national EMS organization, a Python-based generator was developed using the **Faker** library. This phase populated 9 core tables with over **500 records each**.
 * **Methodology**: Uses an idempotent approach with `ON CONFLICT DO NOTHING` to allow repeatable generation without collisions.
-* **Script:** `[PATH_TO_PHASE_B_GENERATOR]`
+* **Script:** `[./Phase_1/python_to_sql/generate_sql.py]`
 
 ### 3. Phase C: Big Data & Bulk Injection (40,000+ Records)
 Simulating years of operational history, we injected **20,000 records each** into `Maintenance_Log` and `Controlled_Substances_Log`.
 * **Smart Generation**: The script queries the live DB to fetch valid `Worker_IDs` and `License_Plates` before creating synchronized CSV files, ensuring 100% referential integrity.
 * **Bulk Loading**: Utilizes the PostgreSQL **COPY** command for high-speed injection, bypassing standard INSERT overhead.
-* **Scripts:** `[PATH_TO_CSV_GEN]` & `[PATH_TO_BULK_INJECTOR]`
+* **Scripts:** `[./Phase_1/csv_to_db/gen_csv.py]` & `[./Phase_1/csv_to_db/insert_to_db.py]`
 
 ---
 
