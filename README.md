@@ -11,6 +11,7 @@
    * [GOOGLE AI STUDIO](#google-ai-studio)
    * [Entity Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
    * [Data Structure Diagram (DSD)](#data-structure-diagram-dsd)
+   * [SQL Scripts](#sql-scripts)
    * [Data Insertion](#data-insertion)
    * [Backup Process](#backup-process)
 2. [Phase 2](#phase-2)
@@ -52,6 +53,18 @@ The conceptual data model mapping out 12 core entities and their relationships.
 The logical database schema normalized to **3NF**, including PK/FK mappings.
 ![DSD Screenshot](./Phase_1/Images/dsd.png)
 
+### SQL Scripts
+**The following SQL scripts are included in the repository:**
+
+* **Create Tables:** Defines the database schema.
+* [View](./Phase_1/Sql_commands/createTables.sql)
+* **Insert Data:** Populates the tables with sample data.
+* [View](./Phase_1/Sql_commands/insertTables.sql)
+* **Drop Tables:** Removes all tables from the database.
+* [View](./Phase_1/Sql_commands/dropTables.sql)
+* **Select All Data:** Retrieves all data from the tables.
+* [View](./Phase_1/Sql_commands/selectAll.sql)
+
 ### Data Insertion
 
 #### 1. Phase A: Manual Baseline
@@ -68,6 +81,9 @@ Simulating years of operational history, we injected **20,000 records each** int
 * **Smart Generation**: The script queries the live DB to fetch valid `Worker_IDs` and `License_Plates` before creating synchronized CSV files, ensuring 100% referential integrity.
 * **Bulk Loading**: Utilizes the PostgreSQL **COPY** command for high-speed injection, bypassing standard INSERT overhead.
 * **Scripts:** [gen_csv.py](./Phase_1/csv_to_db/gen_csv.py) & [insert_to_db.py](./Phase_1/csv_to_db/insert_to_db.py)
+
+Final state of tables:
+![CountAll](./Phase_1/Images/CountAll.png)
 
 ### Backup Process
 The backup was generated using the **pgAdmin 4** management interface. We fully restored it on a fresh container to ensure data portability.
