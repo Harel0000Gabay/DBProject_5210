@@ -8,7 +8,7 @@
 ## Table of Contents
 1. [Phase 1](#phase-1)
    * [Project Overview](#project-overview)
-   * [GOOGLE AI STUDIO](#google-ai-studio)
+   * [Google Ai Studio](#google-ai-studio)
    * [Entity Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
    * [Data Structure Diagram (DSD)](#data-structure-diagram-dsd)
    * [SQL Scripts](#sql-scripts)
@@ -36,7 +36,7 @@ The primary goals of this project are:
 * **Simulating real-world scenarios** where database management is crucial for life-saving logistics.
 * **Automation of data entry** using external Python scripts and bulk injection tools.
 
-### GOOGLE AI STUDIO
+### Google Ai Studio
 * **Live Website:** [MDA Logistics](https://ems-logistics-pro-505350528104.us-west1.run.app/)
 
 1. **Main Dashboard**: Overview of active vehicles and logistical activities. ![Main Dashboard](./Phase_1/Images/Screen4.png)
@@ -57,13 +57,13 @@ The logical database schema normalized to **3NF**, including PK/FK mappings.
 **The following SQL scripts are included in the repository:**
 
 * **Create Tables:** Defines the database schema.
-* [View](./Phase_1/Sql_commands/createTables.sql)
+* [📜 View](./Phase_1/Sql_commands/createTables.sql)
 * **Insert Data:** Populates the tables with sample data.
-* [View](./Phase_1/Sql_commands/insertTables.sql)
+* [📜 View](./Phase_1/Sql_commands/insertTables.sql)
 * **Drop Tables:** Removes all tables from the database.
-* [View](./Phase_1/Sql_commands/dropTables.sql)
+* [📜 View](./Phase_1/Sql_commands/dropTables.sql)
 * **Select All Data:** Retrieves all data from the tables.
-* [View](./Phase_1/Sql_commands/selectAll.sql)
+* [📜 View](./Phase_1/Sql_commands/selectAll.sql)
 
 ### Data Insertion
 
