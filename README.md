@@ -76,11 +76,12 @@ To reach a realistic scale for a national EMS organization, a Python-based gener
 * **Methodology**: Uses an idempotent approach with `ON CONFLICT DO NOTHING` to allow repeatable generation without collisions.
 * **Script:** [generate_sql.py](./Phase_1/python_to_sql/generate_sql.py)
 
-#### 3. Phase C: Big Data & Bulk Injection (40,000+ Records)
+#### 3. Phase C: Bulk Injection (40,000+ Records)
 Simulating years of operational history, we injected **20,000 records each** into `Maintenance_Log` and `Controlled_Substances_Log`.
-* **Smart Generation**: The script queries the live DB to fetch valid `Worker_IDs` and `License_Plates` before creating synchronized CSV files, ensuring 100% referential integrity.
+* **Mock Data Generation (Mockaroo)**: Used to generate random CSV files for data insertion.
+![Mock Data](./Phase_1/Images/mock_data.png)
 * **Bulk Loading**: Utilizes the PostgreSQL **COPY** command for high-speed injection, bypassing standard INSERT overhead.
-* **Scripts:** [gen_csv.py](./Phase_1/csv_to_db/gen_csv.py) & [insert_to_db.py](./Phase_1/csv_to_db/insert_to_db.py)
+* **Script:** [insert_to_db.py](./Phase_1/csv_to_db/insert_to_db.py)
 
 Final state of tables:
 ![CountAll](./Phase_1/Images/CountAll.png)

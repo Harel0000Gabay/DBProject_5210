@@ -1,7 +1,6 @@
 import psycopg2
 import os
 
-# פרטי החיבור מה-docker-compose.yml שלך
 DB_PARAMS = {
     "host": "localhost",
     "database": "DBP",
