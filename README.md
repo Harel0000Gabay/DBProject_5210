@@ -74,14 +74,14 @@ Small-scale, high-quality manual insertions were performed to verify schema cons
 #### 2. Phase B: Institutional Scaling (500+ Records)
 To reach a realistic scale for a national EMS organization, a Python-based generator was developed using the **Faker** library. This phase populated 9 core tables with over **500 records each**.
 * **Methodology**: Uses an idempotent approach with `ON CONFLICT DO NOTHING` to allow repeatable generation without collisions.
-* **Script:** [generate_sql.py](./Phase_1/python_to_sql/generate_sql.py)
+* **Script:** [generate_sql.py](./Phase_1/Programming/generate_sql.py)
 
 #### 3. Phase C: Bulk Injection (40,000+ Records)
 Simulating years of operational history, we injected **20,000 records each** into `Maintenance_Log` and `Controlled_Substances_Log`.
 * **Mock Data Generation (Mockaroo)**: Used to generate random CSV files for data insertion.
 ![Mock Data](./Phase_1/Images/mock_data.png)
 * **Bulk Loading**: Utilizes the PostgreSQL **COPY** command for high-speed injection, bypassing standard INSERT overhead.
-* **Script:** [insert_to_db.py](./Phase_1/csv_to_db/insert_to_db.py)
+* **Script:** [insert_to_db.py](./Phase_1/mockarooFiles/insert_to_db.py)
 
 Final state of tables:
 ![CountAll](./Phase_1/Images/CountAll.png)
