@@ -97,23 +97,28 @@ The backup was generated using the **pgAdmin 4** management interface. We fully 
 
 ## **Phase 2**
 ### Queries
+
 #### Select Queries:
 **1. ספקים שלא ביצעו הזמנות משנת 2025**
+
 הסבר יעילות: תצורה 1 (NOT EXISTS) מומלצת כי היא עוצרת מיד כשנמצאת התאמה. תצורה 2 (LEFT JOIN) מאלצת לבצע חיבור מלא של הטבלאות בזיכרון ורק אז מסננת ערכי NULL.
 ![codePic](./Phase_2/Images/select/select1code.png)
 ![outcomePic](./Phase_2/Images/select/select1.png)
 
 **2. עובדים שמשכו חומרים נרקוטים בחודש נובמבר 2025**
+
 הסבר יעילות: תצורה 1 (IN) עדיפה כי היא בודקת רק קיום של רשומה. תצורה 2 (JOIN) משכפלת רשומות ומאלצת שימוש ב-DISTINCT, המצריך פעולת מיון (Sort) שגוזלת משאבים רבים.
 ![codePic](./Phase_2/Images/select/select2code.png)
 ![outcomePic](./Phase_2/Images/select/select2.png)
 
 **3. פריטי ציוד רפואי שהכמות שלהם במלאי קטנה מ-10**
+
 הסבר יעילות: תצורה 1 (JOIN) הרבה יותר יעילה. תצורה 2 מריצה תתי-שאילתות בשורת ה-SELECT עבור כל שורה שמוחזרת (בעיית N+1), מה שמאט מאוד את זמן הריצה.
 ![codePic](./Phase_2/Images/select/select3code.png)
 ![outcomePic](./Phase_2/Images/select/select3.png)
 
 **4. רכבים שעלות הטיפולים שלהם גבוהה מהממוצע הארצי**
+
 הסבר יעילות: תצורה 1 (WITH - CTE) מחשבת את הממוצע הארצי פעם אחת בלבד ושומרת אותו בזיכרון. לכן היא קריאה ויעילה יותר לעומת תצורה 2 שמחשבת זאת מחדש בתוך ה-HAVING.
 ![codePic](./Phase_2/Images/select/select4code.png)
 ![outcomePic](./Phase_2/Images/select/select4.png)
