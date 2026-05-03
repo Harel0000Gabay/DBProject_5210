@@ -204,3 +204,35 @@ The backup was generated using the **pgAdmin 4** management interface. We fully 
 אחרי:
 ![afterPic](./Phase_2/Images/delete/delete3after.png)
 
+### Rollback and Commit
+[Code ROllback and Commit](/Phase_2/RollbackCommit.sql)
+
+#### Rollback
+**איפוס כמות ממוצר בתחנה**
+
+לפני:
+![beforePic](./Phase_2/Images/rollback/before.png)
+
+אחרי:
+![afterPic](./Phase_2/Images/rollback/after.png)
+
+ביצוע ROLLBACK:
+![rollbackPic](./Phase_2/Images/rollback/rollback.png)
+
+אחרי:
+![beforePic](./Phase_2/Images/rollback/before.png)
+
+#### Commit
+**שינוי תפקיד לעובד**
+
+לפני:
+![beforePic](/Phase_2/Images/commit/before.png)
+
+אחרי:
+![afterPic](/Phase_2/Images/commit/after.png)
+
+ביצוע COMMIT:
+![commitPic](/Phase_2/Images/commit/commit.png)
+
+אחרי:
+![afterPic](/Phase_2/Images/commit/after.png)
