@@ -260,3 +260,28 @@ The backup was generated using the **pgAdmin 4** management interface. We fully 
 
 מישום שזה נוגד לאילוץ קיבלנו את השגיאה הבאה:
 ![error3](/Phase_2/Images/constraints/error3.png)
+
+### Indexes
+#### **אינדקס ראשון על תאריך טיפול (Maintenance_Log): ** 
+לפני:
+![before](/Phase_2/Images/index/index1before.png)
+
+אחרי:
+![after](/Phase_2/Images/index/index1after.png)
+
+#### **אינדקס שני על ת.ז עובד (Maintenance_Log): ** 
+לפני:
+![before](/Phase_2/Images/index/index2before.png)
+
+אחרי:
+![after](/Phase_2/Images/index/index2after.png)
+
+#### **אינדקס שלישי על קוד פריט רגיש במשיכות (Controlled_Substances_Log): ** 
+לפני:
+![before](/Phase_2/Images/index/index3before.png)
+
+אחרי:
+![after](/Phase_2/Images/index/index3after.png)
+
+#### **הסבר לתוצאות:**
+לפני הוספת האינדקסים, מסד הנתונים נאלץ לבצע סריקה מלאה של כל 20,000 השורות בטבלה כדי למצוא את הנתונים המבוקשים (פעולה המכונה Full Table Scan), מה שלקח זמן רב יותר. לאחר יצירת האינדקסים, מסד הנתונים השתמש במבנה נתונים ממוין (B-Tree) המאפשר "קפיצה" ישירה לנתונים הרלוונטיים (Index Seek), וכתוצאה מכך זמן הריצה התקצר משמעותית לאלפיות שנייה בודדות.
