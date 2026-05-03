@@ -10,10 +10,13 @@ WHERE Cost < 100
 AND EXTRACT(YEAR FROM Treatment_Date) < 2020;
 
 -----------------------------------------------------------------------------------------------------------
---ביטול הזמנה: מחיקת פריטים מהזמנה מסוימת שבוטלה, לפני מחיקת ההזמנה עצמה
-DELETE FROM Order_Items
-WHERE Order_ID = 5050;
-
---מחיקת ההזמנה עצמה (טבלת האב):
-DELETE FROM Purchase_Order
-WHERE Order_ID = 5050;
+-- מחיקת טיפולי מוסך בעלות של פחות מ-100 שקלים, 
+-- שבוצעו על רכבים המשויכים לתחנות בעיר ירושלים
+DELETE FROM Maintenance_Log
+WHERE Cost < 100 
+AND License_Plate IN (
+    SELECT v.License_Plate 
+    FROM Vehicle v
+    JOIN Station s ON v.Station_ID = s.Station_ID
+    WHERE s.City = 'Jerusalem'
+);

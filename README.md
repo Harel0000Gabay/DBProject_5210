@@ -138,3 +138,51 @@ The backup was generated using the **pgAdmin 4** management interface. We fully 
 **8. הזמנות רכש פתוחות טרם סופקו וכמות הפריטים שהוזמנה**
 ![codePic](./Phase_2/Images/select/select8code.png)
 ![outcomePic](./Phase_2/Images/select/select8.png)
+
+
+#### Update Queries
+
+##### **1 – עדכון כמות מלאי לציוד רפואי בתחנות ירושלים**
+שאילתא זו מגדילה ב־10% את כמות המלאי של פריטים רפואיים בתחנות הממוקמות בעיר ירושלים.
+
+![beforePic](./Phase_2/Images/update/update1before.png)
+![afterPic](./Phase_2/Images/update/update1after.png)
+
+
+##### **2 – עדכון שיוך רכבים ישנים לתחנה 500**
+שאילתא זו מעבירה רכבים שיוצרו לפני שנת 2020 מסוג ALS Ambulance או MICU לתחנה מספר 500.
+
+![beforePic](./Phase_2/Images/update/update2before.png)
+![afterPic](./Phase_2/Images/update/update2after.png)
+
+
+
+##### **3 – דחיית תאריך אספקה להזמנות מספק 101**
+שאילתא זו דוחה ב־5 ימים את תאריך האספקה של הזמנות מספק מספר 101 אשר טרם סופקו.
+
+![beforePic](./Phase_2/Images/update/update3before.png)
+![afterPic](./Phase_2/Images/update/update3after.png)
+
+
+#### Delete Queries
+
+##### **1 – מחיקת לוגים ישנים של ציוד כיול**
+שאילתא זו מוחקת רשומות של בדיקות כיול שעברו בהצלחה ובוצעו לפני יותר מ־5 שנים.
+
+![beforePic](./Phase_2/Images/delete/delete1before.png)
+![afterPic](./Phase_2/Images/delete/delete1after.png)
+
+
+##### **2 – מחיקת טיפולים זולים לפני שנת 2020**
+שאילתא זו מוחקת טיפולי מוסך בעלות נמוכה מ־100 ש"ח שבוצעו לפני שנת 2020.
+
+![beforePic](./Phase_2/Images/delete/delete2before.png)
+![afterPic](./Phase_2/Images/delete/delete2after.png)
+
+
+##### **3 – מחיקת טיפולים זולים לרכבים בירושלים**
+שאילתא זו מוחקת טיפולי מוסך בעלות נמוכה מ־100 ש"ח שבוצעו על רכבים המשויכים לתחנות בעיר ירושלים.
+
+![beforePic](./Phase_2/Images/delete/delete3before.png)
+![afterPic](./Phase_2/Images/delete/delete3after.png)
+
