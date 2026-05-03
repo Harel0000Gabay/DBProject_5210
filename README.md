@@ -205,7 +205,7 @@ The backup was generated using the **pgAdmin 4** management interface. We fully 
 ![afterPic](./Phase_2/Images/delete/delete3after.png)
 
 ### Rollback and Commit
-[Code ROllback and Commit](/Phase_2/RollbackCommit.sql)
+[Code Rollback and Commit](/Phase_2/RollbackCommit.sql)
 
 #### Rollback
 **איפוס כמות ממוצר בתחנה**
@@ -236,3 +236,27 @@ The backup was generated using the **pgAdmin 4** management interface. We fully 
 
 אחרי:
 ![afterPic](/Phase_2/Images/commit/after.png)
+
+### Constraints
+[Code Of Constraints](/Phase_2/constraints.sql)
+
+#### **אילוץ ראשון:** כל אמייל חייב להכיל @ בתוכו
+הקוד שניסינו להריץ:
+![code1](./Phase_2/Images/constraints/code1.png)
+
+מישום שזה נוגד לאילוץ קיבלנו את השגיאה הבאה:
+![error1](/Phase_2/Images/constraints/error1.png)
+
+#### **אילוץ שני:** הגבלת כמות האפשרית למשיכה של חומרים רגישיים בפעם אחת ל 50
+הקוד שניסינו להריץ:
+![code2](./Phase_2/Images/constraints/code2.png)
+
+מישום שזה נוגד לאילוץ קיבלנו את השגיאה הבאה:
+![error2](/Phase_2/Images/constraints/error2.png)
+
+#### **אילוץ שלישי:** שנת ייצור של רכב חייבת להיות קטנה או שווה לשנת רכישה
+הקוד שניסינו להריץ:
+![code3](./Phase_2/Images/constraints/code3.png)
+
+מישום שזה נוגד לאילוץ קיבלנו את השגיאה הבאה:
+![error3](/Phase_2/Images/constraints/error3.png)
